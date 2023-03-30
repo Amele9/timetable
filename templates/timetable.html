@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>timetable</title>
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Время</th>
+        <th>Пара</th>
+        <th>Кабинет</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for weekday in timetable %}
+        <tr>
+            <td class="weekday" colspan="3">{{ weekday[0]|safe }}</td>
+        </tr>
+        {% if not weekday[1] %}
+            <tr>
+                <td class="remotely" colspan="3">Дистанционно</td>
+            </tr>
+        {% else %}
+            {% for lesson in weekday[1] %}
+                <tr>
+                    <td class="time">{{ lesson[0]|safe }}</td>
+                    <td>{{ lesson[1]|safe }}</td>
+                    <td>{{ lesson[2]|safe }}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

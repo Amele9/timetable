@@ -1,0 +1,48 @@
+body {
+    background: linear-gradient(90deg, #FFCC70, #C850C0, #4158D0);
+    font-family: 'Roboto', sans-serif;
+}
+
+table {
+    border: 2px solid #6495ED;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    margin: 20px auto;
+    width: 960px;
+}
+
+table {
+    table-layout: fixed;
+}
+
+table th {
+    background-color: #40E0D0;
+    border: 2px solid #6495ED;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+table td {
+    background-color: #F2F4F4;
+    border: 2px solid #6495ED;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5px;
+}
+
+td.weekday, td.remotely, td.time {
+    font-weight: bold;
+}
+
+td.weekday {
+    padding: 20px 10px 5px;
+}
+
+td.remotely {
+    color: hsl(0, 100%, 50%);
+}
+
+td.time {
+    color: hsl(270, 100%, 50%);
+}
